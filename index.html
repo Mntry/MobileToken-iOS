@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Monetary MobileToken for iOS by Mntry</title>
-
+    <title>Monetary MobileToken iOS Framework</title>
+    <link href="favicon.png" rel="Shortcut Icon" />
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
@@ -15,24 +15,21 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Monetary MobileToken for iOS</h1>
-        <p>Monetary MobileToken iOS Framework</p>
-
-        <p class="view"><a href="https://github.com/Mntry/MobileToken-iOS">View the Project on GitHub <small>Mntry/MobileToken-iOS</small></a></p>
-
-
+        <p><img alt="Monetary" src="logo.png"></p>
+        <h1>Monetary MobileToken iOS Framework</h1>
+        <p></p>
         <ul>
-          <li><a href="https://github.com/Mntry/MobileToken-iOS/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Mntry/MobileToken-iOS/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Mntry/MobileToken-iOS">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/Mntry/MonetaryMobileToken-iOS/releases/latest">Framework <strong>Download</strong></a></li>
+          <li><a href="https://github.com/Mntry/MonetaryMobileToken-iOS">View Demo <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/Mntry/MonetaryMobileToken-iOS/issues">Get Help <strong>Support</strong></a></li>
         </ul>
       </header>
       <section>
         <h1>
-<a id="getting-started-with-mobiletoken-for-ios" class="anchor" href="#getting-started-with-mobiletoken-for-ios" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started with MobileToken for iOS</h1>
+<a id="getting-started-with-monetarymobileframework" class="anchor" href="#getting-started-with-monetarymobileframework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started with iOS MobileToken</h1>
 
 <h3>
-<a id="add-monetarymobiletokenframework-to-your-xcode-project" class="anchor" href="#add-monetarymobiletokenframework-to-your-xcode-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add MonetaryMobileToken.framework to your Xcode project</h3>
+<a id="add-monetarymobileframework-to-your-xcode-project" class="anchor" href="#add-monetarymobileframework-to-your-xcode-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add MonetaryMobileToken.framework to your Xcode project</h3>
 
 <ol>
 <li>In the project navigator, select the project or group within a project to which you want to add the framework.</li>
@@ -59,7 +56,7 @@
 <h5>
 <a id="implement-monetarytokendelegate-methods" class="anchor" href="#implement-monetarytokendelegate-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement <code>MonetaryTokenDelegate</code> methods</h5>
 
-<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenCreated:(MonetaryToken *)token
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenCreated:(<span class="pl-c1">MonetaryToken</span> *)token
 {
   <span class="pl-c">// A token has been received!</span>
 }</pre></div>
@@ -81,7 +78,7 @@
 
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenizationError:(<span class="pl-c1">NSError</span> *)error
 {
-  <span class="pl-c">// A tokenization error has occurred!</span>
+  <span class="pl-c">// A tokenization error has occured!</span>
 }</pre></div>
 
 <p>The <code>tokenizationError</code> method will receive an <code>NSError</code> object with one of the 4 following error codes:</p>
@@ -114,7 +111,6 @@
                        <span class="pl-c1">overViewController:</span><span class="pl-v">self</span>];</pre></div>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/Mntry">Mntry</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
