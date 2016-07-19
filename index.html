@@ -1,148 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
   <head>
-    <title>MonetaryMobileToken.framework  Reference</title>
-    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
-    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/jazzy.js" defer></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Monetary MobileToken iOS Framework</title>
+    <link href="favicon.png" rel="Shortcut Icon" />
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <a title="MonetaryMobileToken.framework  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">MonetaryMobileToken.framework Docs</a></p>
-        <p class="header-right"><a href="https://github.com/Mntry/MobileToken-iOS"><img src="img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">MonetaryMobileToken.framework Reference</a>
-        <img id="carat" src="img/carat.png" />
-        MonetaryMobileToken.framework  Reference
-      </p>
-    </div>
-    <div class="content-wrapper">
-      <nav class="sidebar">
-        <ul class="nav-groups">
-          <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/MonetaryToken.html">MonetaryToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MonetaryTokenizer.html">MonetaryTokenizer</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Constants.html">Constants</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Constants.html#/c:@MonetaryMobileVersionNumber">MonetaryMobileVersionNumber</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Constants.html#/c:@MonetaryMobileVersionString">MonetaryMobileVersionString</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Enums/MonetaryErrorCodes.html">MonetaryErrorCodes</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/MonetaryTokenDelegate.html">MonetaryTokenDelegate</a>
-              </li>
-            </ul>
-          </li>
+    <div class="wrapper">
+      <header>
+        <p><img alt="Monetary" src="logo.png"></p>
+        <h1>Monetary MobileToken iOS Framework</h1>
+        <p></p>
+        <ul>
+          <li><a href="https://github.com/Mntry/MobileToken-iOS/releases/latest">Framework <strong>Download</strong></a></li>
+          <li><a href="https://github.com/Mntry/MobileToken-iOS">View Demo <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/Mntry/MobileToken-iOS/issues">Get Help <strong>Support</strong></a></li>
         </ul>
-      </nav>
-      <article class="main-content">
-        <section>
-          <section class="section">
+      </header>
+      <section>
+        <h1>
+<a id="getting-started-with-monetarymobileframework" class="anchor" href="#getting-started-with-monetarymobileframework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started with iOS MobileToken</h1>
 
-            <a href='#getting-started-with-mobiletoken-for-ios' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting-started-with-mobiletoken-for-ios'>Getting started with MobileToken for iOS</h1>
-<a href='#add-monetarymobiletoken-framework-to-your-xcode-project' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='add-monetarymobiletoken-framework-to-your-xcode-project'>Add MonetaryMobileToken.framework to your Xcode project</h3>
+<h3>
+<a id="add-monetarymobileframework-to-your-xcode-project" class="anchor" href="#add-monetarymobileframework-to-your-xcode-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add MonetaryMobileToken.framework to your Xcode project</h3>
 
 <ol>
 <li>In the project navigator, select the project or group within a project to which you want to add the framework.</li>
 <li>Choose File &gt; Add Files to “<em>Your Project Name</em>”.</li>
 <li>Select the MonetaryMobileToken.framework bundle, and click Add.</li>
 <li>In the project settings, choose the Build Phases tab.</li>
-<li>Under the Embed Frameworks section, choose <q>+</q> to add a new Embedded Framework.</li>
+<li>Under the Embed Frameworks section, choose "+" to add a new Embedded Framework.</li>
 <li>Select the MonetaryMobileToken.framework bundle, and click Add.</li>
 </ol>
-<a href='#include-the-framework-in-your-code' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='include-the-framework-in-your-code'>Include the framework in your code</h3>
-<pre class="highlight plaintext"><code>#import &lt;MonetaryMobileToken/MonetaryMobileToken.h&gt;
-</code></pre>
-<a href='#implement-the-tokenization-delegate' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='implement-the-tokenization-delegate'>Implement the tokenization delegate</h3>
-<a href='#implement-the-code-monetarytokendelegate-code-protocol' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='implement-the-code-monetarytokendelegate-code-protocol'>Implement the <code>MonetaryTokenDelegate</code> protocol</h5>
-<pre class="highlight plaintext"><code>@interface ViewController : UIViewController &lt;MonetaryTokenDelegate&gt;
-</code></pre>
-<a href='#implement-code-monetarytokendelegate-code-methods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='implement-code-monetarytokendelegate-code-methods'>Implement <code>MonetaryTokenDelegate</code> methods</h5>
-On Success:
-<pre class="highlight plaintext"><code>- (void)tokenCreated:(MonetaryToken *)token
-{
-  // A token has been received!
-}
-</code></pre>
 
-<p>In the <code>tokenCreated</code> method, the received <code>MonetaryToken</code> object contains 5 <code>NSString</code> properties:<br>
+<h3>
+<a id="include-the-framework-in-your-code" class="anchor" href="#include-the-framework-in-your-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Include the framework in your code</h3>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>MonetaryMobileToken/MonetaryMobileToken.h<span class="pl-pds">&gt;</span></span></pre></div>
+
+<h3>
+<a id="implement-the-tokenization-delegate" class="anchor" href="#implement-the-tokenization-delegate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement the tokenization delegate</h3>
+
+<h5>
+<a id="implement-the-monetarytokendelegate-protocol" class="anchor" href="#implement-the-monetarytokendelegate-protocol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement the <code>MonetaryTokenDelegate</code> protocol</h5>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">ViewController</span> : <span class="pl-e">UIViewController</span> &lt;MonetaryTokenDelegate&gt;</pre></div>
+
+<h5>
+<a id="implement-monetarytokendelegate-methods" class="anchor" href="#implement-monetarytokendelegate-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement <code>MonetaryTokenDelegate</code> methods</h5>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenCreated:(<span class="pl-c1">MonetaryToken</span> *)token
+{
+  <span class="pl-c">// A token has been received!</span>
+}</pre></div>
+
+<p>In the <code>tokenCreated</code> method, the received <code>MonetaryToken</code> object contains 5 <code>NSString</code> properties:  </p>
+
 <ul>
-<li><code>Token</code>: The one-time-use token for the user-entered account data.</li>
-<li><code>Brand</code>: The card brand of account represented by the token.</li>
-<li><code>ExpirationMonth</code>: The 2-digit expiration month of the account.</li>
-<li><code>ExpirationYear</code>: The 4-digit expiration year of the account.</li>
-<li><code>Last4</code>: The last 4 digits of the account number.</p></li>
+<li>
+<code>Token</code>: The one-time-use token for the user-entered account data.</li>
+<li>
+<code>Brand</code>: The card brand of account represented by the token.</li>
+<li>
+<code>ExpirationMonth</code>: The 2-digit expiration month of the account.</li>
+<li>
+<code>ExpirationYear</code>: The 4-digit expiration year of the account.</li>
+<li>
+<code>Last4</code>: The last 4 digits of the account number.</li>
 </ul>
 
-On Error:
-<pre class="highlight plaintext"><code>- (void)tokenizationError:(NSError *)error
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenizationError:(<span class="pl-c1">NSError</span> *)error
 {
-  // A tokenization error has occurred!
-}
-</code></pre>
+  <span class="pl-c">// A tokenization error has occurred!</span>
+}</pre></div>
 
-<p>The <code>tokenizationError</code> method will receive an <code>NSError</code> object with one of the 4 following error codes:
-  <ul>
-    <li><code>MMConnectionError</code>: Failed to communicate with Monetary Token API.</li>
-    <li><code>MMAuthenticationError</code>: Public key authentication failed.</li>
-    <li><code>MMDataValidationError</code>: Failed to tokenize due to invalid account information.</li>
-    <li><code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.</li>
-  </ul>
+<p>The <code>tokenizationError</code> method will receive an <code>NSError</code> object with one of the 4 following error codes:</p>
 
-On Cancel:
-<pre class="highlight plaintext"><code>- (void)tokenizationCancelled
+<ul>
+<li>
+<code>MMConnectionError</code>: Failed to communicate with Monetary Token API.</li>
+<li>
+<code>MMAuthenticationError</code>: Public key authentication failed.</li>
+<li>
+<code>MMDataValidationError</code>: Failed to tokenize due to invalid account information.</li>
+<li>
+<code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.</li>
+</ul>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenizationCancelled
 {
-  // The user has cancelled tokenization!
-}
-</code></pre></p>
-<a href='#request-a-token-for-keyed-account' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='request-a-token-for-keyed-account'>Request a token for keyed account</h3>
-<a href='#provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views'>Provide a <code>MonetaryTokenizer</code> object with a Monetary public key, a <code>MonetaryTokenDelegate</code> object which to send events, and a <code>UIViewController</code> over which to display the account entry views</h5>
-<pre class="highlight plaintext"><code>MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
-[tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
-                              andDelegate:self
-                       overViewController:self];
-</code></pre>
+  <span class="pl-c">// The user has cancelled tokenization!</span>
+}</pre></div>
 
-          </section>
-        </section>
-        <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://monetary.co" target="_blank" rel="external">Monetary</a>. All rights reserved. (Last updated: 2016-07-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
-      </article>
+<h3>
+<a id="request-a-token-for-keyed-account" class="anchor" href="#request-a-token-for-keyed-account" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request a token for keyed account</h3>
+
+<h5>
+<a id="provide-a-monetarytokenizer-object-with-a-monetary-public-key-a-monetarytokendelegate-object-which-to-send-events-and-a-uiviewcontroller-over-which-to-display-the-account-entry-views" class="anchor" href="#provide-a-monetarytokenizer-object-with-a-monetary-public-key-a-monetarytokendelegate-object-which-to-send-events-and-a-uiviewcontroller-over-which-to-display-the-account-entry-views" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Provide a <code>MonetaryTokenizer</code> object with a Monetary public key, a <code>MonetaryTokenDelegate</code> object which to send events, and a <code>UIViewController</code> over which to display the account entry views</h5>
+
+<div class="highlight highlight-source-objc"><pre>MonetaryTokenizer *tokenizer = [MonetaryTokenizer <span class="pl-c1">new</span>];
+[tokenizer <span class="pl-c1">requestKeyedTokenWithPublicKey:</span><span class="pl-s"><span class="pl-pds">@"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>
+                              <span class="pl-c1">andDelegate:</span><span class="pl-v">self</span>
+                       <span class="pl-c1">overViewController:</span><span class="pl-v">self</span>];</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
-</div>
 </html>
