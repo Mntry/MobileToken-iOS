@@ -56,6 +56,7 @@
 <h5>
 <a id="implement-monetarytokendelegate-methods" class="anchor" href="#implement-monetarytokendelegate-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement <code>MonetaryTokenDelegate</code> methods</h5>
 
+On Success:
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenCreated:(<span class="pl-c1">MonetaryToken</span> *)token
 {
   <span class="pl-c">// A token has been received!</span>
@@ -76,6 +77,7 @@
 <code>Last4</code>: The last 4 digits of the account number.</li>
 </ul>
 
+On Error:
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenizationError:(<span class="pl-c1">NSError</span> *)error
 {
   <span class="pl-c">// A tokenization error has occurred!</span>
@@ -94,6 +96,7 @@
 <code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.</li>
 </ul>
 
+On Cancel:
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenizationCancelled
 {
   <span class="pl-c">// The user has cancelled tokenization!</span>
