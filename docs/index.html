@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MonetaryMobileToken.framework  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+
+  </head>
+  <body>
+    <a title="MonetaryMobileToken.framework  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">MonetaryMobileToken.framework Docs</a></p>
+        <p class="header-right"><a href="https://github.com/Mntry/MobileToken-iOS"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">MonetaryMobileToken.framework Reference</a>
+        <img id="carat" src="img/carat.png" />
+        MonetaryMobileToken.framework  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/MonetaryToken.html">MonetaryToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MonetaryTokenizer.html">MonetaryTokenizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Constants.html#/c:@MonetaryMobileVersionNumber">MonetaryMobileVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Constants.html#/c:@MonetaryMobileVersionString">MonetaryMobileVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/MonetaryErrorCodes.html">MonetaryErrorCodes</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/MonetaryTokenDelegate.html">MonetaryTokenDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+
+            <a href='#getting-started-with-mobiletoken-for-ios' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting-started-with-mobiletoken-for-ios'>Getting started with MobileToken for iOS</h1>
+<a href='#add-monetarymobiletoken-framework-to-your-xcode-project' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='add-monetarymobiletoken-framework-to-your-xcode-project'>Add MonetaryMobileToken.framework to your Xcode project</h3>
+
+<ol>
+<li>In the project navigator, select the project or group within a project to which you want to add the framework.</li>
+<li>Choose File &gt; Add Files to “<em>Your Project Name</em>”.</li>
+<li>Select the MonetaryMobileToken.framework bundle, and click Add.</li>
+<li>In the project settings, choose the Build Phases tab.</li>
+<li>Under the Embed Frameworks section, choose <q>+</q> to add a new Embedded Framework.</li>
+<li>Select the MonetaryMobileToken.framework bundle, and click Add.</li>
+</ol>
+<a href='#include-the-framework-in-your-code' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='include-the-framework-in-your-code'>Include the framework in your code</h3>
+<pre class="highlight plaintext"><code>#import &lt;MonetaryMobileToken/MonetaryMobileToken.h&gt;
+</code></pre>
+<a href='#implement-the-tokenization-delegate' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='implement-the-tokenization-delegate'>Implement the tokenization delegate</h3>
+<a href='#implement-the-code-monetarytokendelegate-code-protocol' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='implement-the-code-monetarytokendelegate-code-protocol'>Implement the <code>MonetaryTokenDelegate</code> protocol</h5>
+<pre class="highlight plaintext"><code>@interface ViewController : UIViewController &lt;MonetaryTokenDelegate&gt;
+</code></pre>
+<a href='#implement-code-monetarytokendelegate-code-methods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='implement-code-monetarytokendelegate-code-methods'>Implement <code>MonetaryTokenDelegate</code> methods</h5>
+<pre class="highlight plaintext"><code>- (void)tokenCreated:(MonetaryToken *)token
+{
+  // A token has been received!
+}
+</code></pre>
+
+<p>In the <code>tokenCreated</code> method, the received <code>MonetaryToken</code> object contains 5 <code>NSString</code> properties:<br>
+* <code>Token</code>: The one-time-use token for the user-entered account data.
+* <code>Brand</code>: The card brand of account represented by the token.
+* <code>ExpirationMonth</code>: The 2-digit expiration month of the account.
+* <code>ExpirationYear</code>: The 4-digit expiration year of the account.
+* <code>Last4</code>: The last 4 digits of the account number.</p>
+<pre class="highlight plaintext"><code>- (void)tokenizationError:(NSError *)error
+{
+  // A tokenization error has occurred!
+}
+</code></pre>
+
+<p>The <code>tokenizationError</code> method will receive an <code>NSError</code> object with one of the 4 following error codes:
+* <code>MMConnectionError</code>: Failed to communicate with Monetary Token API.
+* <code>MMAuthenticationError</code>: Public key authentication failed.
+* <code>MMDataValidationError</code>: Failed to tokenize due to invalid account information.
+* <code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.
+<code>objective-c
+- (void)tokenizationCancelled
+{
+  // The user has cancelled tokenization!
+}
+</code></p>
+<a href='#request-a-token-for-keyed-account' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='request-a-token-for-keyed-account'>Request a token for keyed account</h3>
+<a href='#provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views'>Provide a <code>MonetaryTokenizer</code> object with a Monetary public key, a <code>MonetaryTokenDelegate</code> object which to send events, and a <code>UIViewController</code> over which to display the account entry views</h5>
+<pre class="highlight plaintext"><code>MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
+[tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
+                              andDelegate:self
+                       overViewController:self];
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://monetary.co" target="_blank" rel="external">Monetary</a>. All rights reserved. (Last updated: 2016-07-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

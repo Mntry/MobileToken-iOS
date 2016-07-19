@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MonetaryTokenizer Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MonetaryTokenizer" class="dashAnchor"></a>
+    <a title="MonetaryTokenizer Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MonetaryMobileToken.framework Docs</a></p>
+        <p class="header-right"><a href="https://github.com/Mntry/MobileToken-iOS"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MonetaryMobileToken.framework Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MonetaryTokenizer Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MonetaryToken.html">MonetaryToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MonetaryTokenizer.html">MonetaryTokenizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@MonetaryMobileVersionNumber">MonetaryMobileVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@MonetaryMobileVersionString">MonetaryMobileVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MonetaryErrorCodes.html">MonetaryErrorCodes</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MonetaryTokenDelegate.html">MonetaryTokenDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MonetaryTokenizer</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">MonetaryTokenizer</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Monetary Tokenizer class for initiating account data entry and tokenization.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MonetaryTokenizer(im)requestKeyedTokenWithPublicKey:andDelegate:overViewController:"></a>
+                    <a name="//apple_ref/objc/Method/-requestKeyedTokenWithPublicKey:andDelegate:overViewController:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MonetaryTokenizer(im)requestKeyedTokenWithPublicKey:andDelegate:overViewController:">-requestKeyedTokenWithPublicKey:andDelegate:overViewController:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Request a token with user-input account data.</p>
+
+<p>Calling this method with the appropriate parameters presents the user with 3 account data entry views, then tokenizes the data input by the user and calls the provided delegate with tokenization results.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">requestKeyedTokenWithPublicKey</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">publicKey</span>
+                           <span class="nf">andDelegate</span><span class="p">:</span>
+                               <span class="p">(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MonetaryTokenDelegate.html">MonetaryTokenDelegate</a></span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">delegate</span>
+                    <span class="nf">overViewController</span><span class="p">:(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">parentViewController</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">requestKeyedTokenWithPublicKey</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">andDelegate</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MonetaryTokenDelegate.html">MonetaryTokenDelegate</a></span><span class="o">!</span><span class="p">,</span> <span class="n">overViewController</span> <span class="nv">parentViewController</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>publicKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Monetary public key for authentication.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A MonetaryTokenDelegate object which to call with tokenization results.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parentViewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A UIViewController over which to display account data entry views.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://monetary.co" target="_blank" rel="external">Monetary</a>. All rights reserved. (Last updated: 2016-07-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
