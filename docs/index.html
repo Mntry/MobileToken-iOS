@@ -90,6 +90,7 @@
 <pre class="highlight plaintext"><code>@interface ViewController : UIViewController &lt;MonetaryTokenDelegate&gt;
 </code></pre>
 <a href='#implement-code-monetarytokendelegate-code-methods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='implement-code-monetarytokendelegate-code-methods'>Implement <code>MonetaryTokenDelegate</code> methods</h5>
+On Success:
 <pre class="highlight plaintext"><code>- (void)tokenCreated:(MonetaryToken *)token
 {
   // A token has been received!
@@ -97,11 +98,15 @@
 </code></pre>
 
 <p>In the <code>tokenCreated</code> method, the received <code>MonetaryToken</code> object contains 5 <code>NSString</code> properties:<br>
-* <code>Token</code>: The one-time-use token for the user-entered account data.
-* <code>Brand</code>: The card brand of account represented by the token.
-* <code>ExpirationMonth</code>: The 2-digit expiration month of the account.
-* <code>ExpirationYear</code>: The 4-digit expiration year of the account.
-* <code>Last4</code>: The last 4 digits of the account number.</p>
+<ul>
+<li><code>Token</code>: The one-time-use token for the user-entered account data.</li>
+<li><code>Brand</code>: The card brand of account represented by the token.</li>
+<li><code>ExpirationMonth</code>: The 2-digit expiration month of the account.</li>
+<li><code>ExpirationYear</code>: The 4-digit expiration year of the account.</li>
+<li><code>Last4</code>: The last 4 digits of the account number.</p></li>
+</ul>
+
+On Error:
 <pre class="highlight plaintext"><code>- (void)tokenizationError:(NSError *)error
 {
   // A tokenization error has occurred!
@@ -109,16 +114,19 @@
 </code></pre>
 
 <p>The <code>tokenizationError</code> method will receive an <code>NSError</code> object with one of the 4 following error codes:
-* <code>MMConnectionError</code>: Failed to communicate with Monetary Token API.
-* <code>MMAuthenticationError</code>: Public key authentication failed.
-* <code>MMDataValidationError</code>: Failed to tokenize due to invalid account information.
-* <code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.
-<code>objective-c
-- (void)tokenizationCancelled
+  <ul>
+    <li><code>MMConnectionError</code>: Failed to communicate with Monetary Token API.</li>
+    <li><code>MMAuthenticationError</code>: Public key authentication failed.</li>
+    <li><code>MMDataValidationError</code>: Failed to tokenize due to invalid account information.</li>
+    <li><code>MMTokenizationError</code>: An error has occurred tokenizing the account data at the Monetary Token API.</li>
+  </ul>
+
+On Cancel:
+<pre class="highlight plaintext"><code>- (void)tokenizationCancelled
 {
   // The user has cancelled tokenization!
 }
-</code></p>
+</code></pre></p>
 <a href='#request-a-token-for-keyed-account' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='request-a-token-for-keyed-account'>Request a token for keyed account</h3>
 <a href='#provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='provide-a-code-monetarytokenizer-code-object-with-a-monetary-public-key-a-code-monetarytokendelegate-code-object-which-to-send-events-and-a-code-uiviewcontroller-code-over-which-to-display-the-account-entry-views'>Provide a <code>MonetaryTokenizer</code> object with a Monetary public key, a <code>MonetaryTokenDelegate</code> object which to send events, and a <code>UIViewController</code> over which to display the account entry views</h5>
 <pre class="highlight plaintext"><code>MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
