@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  MonetaryMobileDemo
+//  MonetaryMobileTokenDemo
 //
 //  Copyright © 2016 Monetary. All rights reserved.
 //
@@ -23,14 +23,21 @@
 
 - (IBAction)btnGetAToken_Pressed:(id)sender
 {
-    MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
-    [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
+    MonetaryTokenizer *tokenizer = [MonetaryTokenizer new]; // initWithCustomAcceptButtonText:@"OK" acceptButtonColor:[UIColor blueColor] cancelButtonText:@"Nothx" andCancelButtonColor:[UIColor redColor]];
+    [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Here]"
                                   andDelegate:self
                            overViewController:self];
 }
 
+- (void)tokenLoading
+{
+    [_btnGetAToken setHidden:YES];
+    [_aiLoadingSpinner startAnimating];
+}
+
 - (void)tokenCreated:(MonetaryToken *)token
 {
+    [_aiLoadingSpinner stopAnimating];
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"We've got a token!"
                                           message:token.Token
@@ -39,15 +46,19 @@
     UIAlertAction *okAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"OK", @"OK action")
                                style:UIAlertActionStyleDefault
-                               handler:nil];
+                               handler:^(UIAlertAction *action)
+                               {
+                                   
+                               }];
     
     [alertController addAction:okAction];
     
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^(){[_btnGetAToken setHidden:NO];}];
 }
 
 - (void)tokenizationError:(NSError *)error
 {
+    [_aiLoadingSpinner stopAnimating];
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:error.localizedFailureReason
                                           message:error.localizedRecoverySuggestion
@@ -56,15 +67,19 @@
     UIAlertAction *okAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"OK", @"OK action")
                                style:UIAlertActionStyleDefault
-                               handler:nil];
+                               handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"OK action");
+                               }];
     
     [alertController addAction:okAction];
     
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^(){[_btnGetAToken setHidden:NO];}];
 }
 
 - (void)tokenizationCancelled
 {
+    [_aiLoadingSpinner stopAnimating];
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"User cancelled!"
                                           message:@"The user has cancelled entering account data."
@@ -73,11 +88,14 @@
     UIAlertAction *okAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"OK", @"OK action")
                                style:UIAlertActionStyleDefault
-                               handler:nil];
+                               handler:^(UIAlertAction *action)
+                               {
+                                   
+                               }];
     
     [alertController addAction:okAction];
     
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^(){[_btnGetAToken setHidden:NO];}];
 }
 
 @end

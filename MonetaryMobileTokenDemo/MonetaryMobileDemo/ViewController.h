@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  MonetaryMobileDemo
+//  MonetaryMobileTokenDemo
 //
 //  Copyright © 2016 Monetary. All rights reserved.
 //
@@ -9,6 +9,9 @@
 #import <MonetaryMobileToken/MonetaryMobileToken.h>
 
 @interface ViewController : UIViewController <MonetaryTokenDelegate>
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *aiLoadingSpinner;
+@property (weak, nonatomic) IBOutlet UIButton *btnGetAToken;
 
 - (IBAction)btnGetAToken_Pressed:(id)sender;
 
