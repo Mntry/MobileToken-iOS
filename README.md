@@ -20,6 +20,14 @@
 ```
 #####Implement `MonetaryTokenDelegate` methods
 
+On Loading:
+```objective-c
+- (void)tokenLoading
+{
+  // The framework has begun tokenizing user-input account data.
+}
+```
+
 On Success:
 ```objective-c
 - (void)tokenCreated:(MonetaryToken *)token
