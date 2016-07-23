@@ -43,10 +43,10 @@ On Error:
 }
 ```
 The `tokenizationError` method will receive an `NSError` object with one of the 4 following error codes:
-* `MMConnectionError`: Failed to communicate with Monetary Token API.
-* `MMAuthenticationError`: Public key authentication failed.
-* `MMDataValidationError`: Failed to tokenize due to invalid account information.
-* `MMTokenizationError`: An error has occurred tokenizing the account data at the Monetary Token API.
+* `MMTConnectionError`: Failed to communicate with Monetary Token API.
+* `MMTAuthenticationError`: Public key authentication failed.
+* `MMTDataValidationError`: Failed to tokenize due to invalid account information.
+* `MMTTokenizationError`: An error has occurred tokenizing the account data at the Monetary Token API.
 
 On Cancel:
 ```objective-c
