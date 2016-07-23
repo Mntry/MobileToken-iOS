@@ -56,6 +56,12 @@
 <h5>
 <a id="implement-monetarytokendelegate-methods" class="anchor" href="#implement-monetarytokendelegate-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implement <code>MonetaryTokenDelegate</code> methods</h5>
 
+On Loading:
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenLoading
+{
+  <span class="pl-c">// The framework has begun tokenizing user-input account data.</span>
+}</pre></div>
+
 On Success:
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)tokenCreated:(<span class="pl-c1">MonetaryToken</span> *)token
 {
