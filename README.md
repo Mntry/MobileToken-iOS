@@ -19,6 +19,8 @@
 @interface ViewController : UIViewController <MonetaryTokenDelegate>
 ```
 #####Implement `MonetaryTokenDelegate` methods
+
+On Success:
 ```objective-c
 - (void)tokenCreated:(MonetaryToken *)token
 {
@@ -33,6 +35,7 @@ In the `tokenCreated` method, the received `MonetaryToken` object contains 5 `NS
 * `ExpirationYear`: The 4-digit expiration year of the account.
 * `Last4`: The last 4 digits of the account number.
 
+On Error:
 ```objective-c
 - (void)tokenizationError:(NSError *)error
 {
@@ -40,10 +43,12 @@ In the `tokenCreated` method, the received `MonetaryToken` object contains 5 `NS
 }
 ```
 The `tokenizationError` method will receive an `NSError` object with one of the 4 following error codes:
-* `MMConnectionError`: Failed to communicate with Monetary Token API.
-* `MMAuthenticationError`: Public key authentication failed.
-* `MMDataValidationError`: Failed to tokenize due to invalid account information.
-* `MMTokenizationError`: An error has occurred tokenizing the account data at the Monetary Token API.
+* `MMTConnectionError`: Failed to communicate with Monetary Token API.
+* `MMTAuthenticationError`: Public key authentication failed.
+* `MMTDataValidationError`: Failed to tokenize due to invalid account information.
+* `MMTTokenizationError`: An error has occurred tokenizing the account data at the Monetary Token API.
+
+On Cancel:
 ```objective-c
 - (void)tokenizationCancelled
 {
