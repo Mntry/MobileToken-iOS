@@ -23,8 +23,8 @@
 
 - (IBAction)btnGetAToken_Pressed:(id)sender
 {
-    MonetaryTokenizer *tokenizer = [MonetaryTokenizer new]; // initWithCustomAcceptButtonText:@"OK" acceptButtonColor:[UIColor blueColor] cancelButtonText:@"Nothx" andCancelButtonColor:[UIColor redColor]];
-    [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Here]"
+    MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
+    [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
                                   andDelegate:self
                            overViewController:self];
 }
