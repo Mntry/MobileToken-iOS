@@ -15,19 +15,6 @@
 @interface MonetaryTokenizer : NSObject
 
 /**
- Initialize MonetaryTokenizer with custom UI properties.
- 
- @param  acceptButtonText Text to display on Accept buttons of user-input dialogs.
- @param  acceptButtonColor Color to set Accept buttons of user-input dialogs.
- @param  cancelButtonText Text to display on Cancel buttons of user-input dialogs.
- @param  cancelButtonColor Color to set Cancel buttons of user-input dialogs.
- */
-- (id)initWithCustomAcceptButtonText:(NSString *)acceptButtonText
-                   acceptButtonColor:(UIColor *)acceptButtonColor
-                    cancelButtonText:(NSString *)cancelButtonText
-                andCancelButtonColor:(UIColor *)cancelButtonColor;
-
-/**
  Request a token with user-input account data.
  
  Calling this method with the appropriate parameters presents the user with 3 account data entry views, then tokenizes the data input by the user and calls the provided delegate with tokenization results.
