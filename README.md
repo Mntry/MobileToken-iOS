@@ -72,3 +72,6 @@ MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
                               andDelegate:self
                        overViewController:self];
 ```
+
+###Report bugs
+If you encounter any bugs or issues with the latest version of MobileToken for iOS, please report them to us by opening a [GitHub Issue](https://github.com/Mntry/MobileToken-iOS/issues)!
