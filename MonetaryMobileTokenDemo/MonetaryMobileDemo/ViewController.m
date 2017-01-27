@@ -24,7 +24,7 @@
 - (IBAction)btnGetAToken_Pressed:(id)sender
 {
     MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
-    [tokenizer requestKeyedTokenWithPublicKey:@"cert_public19120A79DC2D4EFCB334EBE70A3CFB8E"
+    [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
                                   andDelegate:self
                            overViewController:self];
 }
