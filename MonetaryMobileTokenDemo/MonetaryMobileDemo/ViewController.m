@@ -38,9 +38,12 @@
 - (void)tokenCreated:(MonetaryToken *)token
 {
     [_aiLoadingSpinner stopAnimating];
+
+    NSString *tokenMessage = [NSString stringWithFormat:@"Token: %@\nLast 4: %@\nExp Month: %@\nExp Year: %@\nBrand: %@", token.Token, token.Last4, token.ExpirationMonth, token.ExpirationYear, token.Brand];
+    
     UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"We've got a token!"
-                                          message:token.Token
+                                          alertControllerWithTitle:@"Token Response"
+                                          message:tokenMessage
                                           preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okAction = [UIAlertAction
