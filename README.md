@@ -1,6 +1,6 @@
 # Getting started with MobileToken for iOS [![Build Status](https://travis-ci.org/Mntry/MobileToken-iOS.svg?branch=master)](https://travis-ci.org/Mntry/MobileToken-iOS)
 
-###Add MonetaryMobileToken.framework to your Xcode project
+### Add MonetaryMobileToken.framework to your Xcode project
 1. In the project navigator, select the project or group within a project to which you want to add the framework.
 2. Choose File > Add Files to “*Your Project Name*”.
 3. Select the MonetaryMobileToken.framework bundle, and click Add.
@@ -8,17 +8,17 @@
 5. Under the Embed Frameworks section, choose "+" to add a new Embedded Framework.
 6. Select the MonetaryMobileToken.framework bundle, and click Add.
 
-###Include the framework in your code
+### Include the framework in your code
 ```objective-c
 #import <MonetaryMobileToken/MonetaryMobileToken.h>
 ```
 
-###Implement the tokenization delegate
-#####Implement the `MonetaryTokenDelegate` protocol
+### Implement the tokenization delegate
+##### Implement the `MonetaryTokenDelegate` protocol
 ```objective-c
 @interface ViewController : UIViewController <MonetaryTokenDelegate>
 ```
-#####Implement `MonetaryTokenDelegate` methods
+##### Implement `MonetaryTokenDelegate` methods
 
 On Loading:
 ```objective-c
@@ -64,8 +64,8 @@ On Cancel:
 }
 ```
 
-###Request a token for keyed account
-#####Provide a `MonetaryTokenizer` object with a Monetary public key, a `MonetaryTokenDelegate` object which to send events, and a `UIViewController` over which to display the account entry views
+### Request a token for keyed account
+##### Provide a `MonetaryTokenizer` object with a Monetary public key, a `MonetaryTokenDelegate` object which to send events, and a `UIViewController` over which to display the account entry views
 ```objective-c
 MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
 [tokenizer requestKeyedTokenWithPublicKey:@"[Public Key Goes Here]"
@@ -73,5 +73,5 @@ MonetaryTokenizer *tokenizer = [MonetaryTokenizer new];
                        overViewController:self];
 ```
 
-###Report bugs
+### Report bugs
 If you encounter any bugs or issues with the latest version of MobileToken for iOS, please report them to us by opening a [GitHub Issue](https://github.com/Mntry/MobileToken-iOS/issues)!
